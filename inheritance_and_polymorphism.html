@@ -1,0 +1,44 @@
+<!--
+  **
+  * Cytonn Technologies
+  *
+  * @author: Joseph Mahugu <jmahugu@cytonn.com>
+  *
+  * Project: Foundation
+  *
+  -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JavaScript</title>
+</head>
+<body>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+//establishing a parent class
+function Parentclass(){
+	this.parent_property1 = "I am a parent";
+	this.parentmethod1 = function parentmethod1(param){
+		return param + "Parent method 1 return data...";
+	}
+}
+
+//establish a child class
+function Childclass(){
+	this.child_property1 = "I am a child";
+	this.childmethod1 = function childmethod1(param){
+		return param + "Child method 1 return data...";
+	}
+}
+
+//Create a new instance of childclass
+Childclass.prototype = new ParentClass();
+var instance1 = new Childclass();
+
+
+document.getElementById("demo1").innerHTML = instance1.parentmethod1("RESULTS: ");
+document.getElementById("demo2").innerHTML = instance1.childmethod1("RESULTS: ");
+</script>
+</body>
+</html>
